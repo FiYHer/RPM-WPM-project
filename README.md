@@ -1,2 +1,11 @@
 # csgo_ext
- csgo external
+ Basic external cheat for csgo using winapi RPM/WPM. 
+ 
+ The HWID check is really ghetto and you are better off with checking more than just HDDs.. also storing them inside the cheat is not a good idea but this was just for learning purposes so I leave it as it is
+ 
+ Figure out your own way to acces memory safer :)
+ 
+ Credits to
+ Jussi (for tons of help)
+ Nero (big help)
+ And all wonderful members of UC
