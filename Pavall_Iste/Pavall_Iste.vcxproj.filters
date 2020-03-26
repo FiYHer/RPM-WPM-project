@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{10030894-08ed-4b0f-bf58-983b1608bc9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Configs">
+      <UniqueIdentifier>{3602c91c-8c1c-4420-bc14-b98083bc85e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Headers">
+      <UniqueIdentifier>{ad2446ac-70a5-4115-b2ec-5011da58549c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Memory">
+      <UniqueIdentifier>{7b779510-4f06-4204-97ac-bcd881dfdef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utils">
+      <UniqueIdentifier>{cb7c8f70-a593-4f61-90da-71f20b64e51f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Main">
+      <UniqueIdentifier>{537a5fb7-2024-4686-aaae-ea9bb00c48b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Hacks">
+      <UniqueIdentifier>{93bfb266-3e44-4bfc-aba8-d962fbaee624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Rebuilt">
+      <UniqueIdentifier>{6a310f54-5c6f-47b3-97b1-1570619a7241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Rebuilt\Player">
+      <UniqueIdentifier>{ed3d4f7e-4de4-4d18-8b4e-909b7fd58609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Rebuilt\Engine">
+      <UniqueIdentifier>{9feb278b-7cba-45bd-a805-1791630ade3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Rebuilt\Math">
+      <UniqueIdentifier>{49c88b23-e026-4b33-b8c6-f91130f646b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Rebuilt\Weapon">
+      <UniqueIdentifier>{70731d32-1614-4abf-8b71-7d0afe6732ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\BSP">
+      <UniqueIdentifier>{523ce4ad-cfce-402d-9c50-365588019f3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MemoryConfig.cpp">
+      <Filter>Code\Configs</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Code\Configs</Filter>
+    </ClCompile>
+    <ClCompile Include="Addresses.cpp">
+      <Filter>Code\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Offsets.cpp">
+      <Filter>Code\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Code\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Code\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Code\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CVars.cpp">
+      <Filter>Code\Configs</Filter>
+    </ClCompile>
+    <ClCompile Include="Hacks.cpp">
+      <Filter>Code\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Code\Rebuilt\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Code\Rebuilt\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Code\Rebuilt\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Code\Rebuilt\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="BSPFile.cpp">
+      <Filter>Code\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="BSPParser.cpp">
+      <Filter>Code\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceRay.cpp">
+      <Filter>Code\BSP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MemoryConfig.hpp">
+      <Filter>Code\Configs</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.hpp">
+      <Filter>Code\Configs</Filter>
+    </ClInclude>
+    <ClInclude Include="Include.hpp">
+      <Filter>Code\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Offsets.hpp">
+      <Filter>Code\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.hpp">
+      <Filter>Code\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Addresses.hpp">
+      <Filter>Code\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.hpp">
+      <Filter>Code\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CVars.hpp">
+      <Filter>Code\Configs</Filter>
+    </ClInclude>
+    <ClInclude Include="Hacks.hpp">
+      <Filter>Code\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>Code\Rebuilt\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.hpp">
+      <Filter>Code\Rebuilt\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Code\Rebuilt\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.hpp">
+      <Filter>Code\Rebuilt\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.hpp">
+      <Filter>Code\Rebuilt\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPFile.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPFlags.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPParser.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="BSPStructure.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceRay.hpp">
+      <Filter>Code\BSP</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
