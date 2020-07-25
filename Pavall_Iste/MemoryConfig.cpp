@@ -11,20 +11,10 @@ bool MemoryConfig::initialize(std::string exe_path, bool fetch_from_web)
 	//Same as before, get exe path for folder to get config location
 	std::string new_path = utils::remove_exe_name(exe_path);
 
-	if (new_path.length() <= 0)
-		return false;
+	if (new_path.length() <= 0) return false;
 
 	config_location = new_path + "memory.cfg";
-	//If you don't want to get the offsets from the internet, but the config file
-	if (!fetch_from_web)
-	{
-		//Check if the file exists, if not, make one
-		check_if_exists();
-		//Then get the offsets from the config
-		get_memory_vars();
-	}
-	else
-		get_from_web();
+	get_from_web();
 
 	return true;
 }
@@ -39,10 +29,10 @@ uintptr_t MemoryConfig::get_memory_var(std::string var, const bool debug_print) 
 
 	std::string file_line;
 	//Loop through the lines of the file
-	while(std::getline(file_read, file_line))
+	while (std::getline(file_read, file_line))
 	{
 		//If it finds the variable its looking for
-		if(file_line.find(var) != std::string::npos)
+		if (file_line.find(var) != std::string::npos)
 		{
 			//Check its valid length
 			if (var.length() > 4)
@@ -146,11 +136,11 @@ uintptr_t MemoryConfig::get_memory_var_web(std::string var, bool debug_print) co
 	const auto internet = InternetOpen("browser", INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, 0);
 
 	//Check if its valid
-	if (!internet)
-		return NULL;
+	if (!internet) return NULL;
 
 	//Open the URL that holds the updated offsets
-	const auto internet_address = InternetOpenUrl(internet, "https://raw.githubusercontent.com/frk1/hazedumper/master/csgo.cs", nullptr, 0, INTERNET_FLAG_PRAGMA_NOCACHE | INTERNET_FLAG_KEEP_CONNECTION, 0);
+	const char* target = "https://github.com/MrLotsmon/csoffsets/blob/master/csgo.cs";
+	const auto internet_address = InternetOpenUrl(internet, target, nullptr, 0, INTERNET_FLAG_PRAGMA_NOCACHE | INTERNET_FLAG_KEEP_CONNECTION, 0);
 
 	//If it's invalid for some reason, close connection
 	if (!internet_address)

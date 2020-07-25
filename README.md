@@ -1,10 +1,30 @@
-# csgo_ext
- Basic external cheat for csgo using winapi RPM/WPM. 
+## 声明
 
- 
- Figure out your own way to acces memory safer :) HINT: Kernel
- 
- Credits to
- Jussi (for tons of help)
- Nero (big help, traceray, bsp parsing and probably alot more)
- And all wonderful members of UC
+这是一个外部的CSGO辅助
+
+## 功能
+
+人物辉光
+
+人物自瞄
+
+人物连跳
+
+自动压枪
+
+自动开枪
+
+隔墙不打
+
+动态地址
+
+## 警告
+
+只能用于国际服/国服
+
+
+
+
+
+
+

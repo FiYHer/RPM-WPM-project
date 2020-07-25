@@ -19,53 +19,20 @@ void CheckValidHardwareID()
 	}
 }
 
-
-
 int main(int argc, char** argv)
 {
-	//CheckValidHardwareID();
+	//初始化CSGO
+	std::cout << "[+] 初始化CSGO...." << std::endl;
+	if (!memory.initialize("csgo")) return 0;
 
-	/////
-	//Initalize the config
-	if (!config.initialize(argv[0]))
-		return 0;
+	//获取网络上最新的地址和偏移
+	std::cout << "[+] 尝试从网络上获取最新地址和偏移...." << std::endl;
+	if (!memory_config.initialize(argv[0], true)) return 0;
 
-	auto fetch_from_web = true;
-	
-	//Kinda lazy and ugly method of getting user input, not very good practice
-	std::string answer;
-	std::cout << "Fetch offsets from the internet? (y/n)\n";
-	std::cin >> answer;
-	if (answer.length() > 0)
-	{
-		if (answer == "y" || answer == "Y")
-			fetch_from_web = true;
-		else if (answer == "n" || answer == "N")
-			fetch_from_web = false;
-	}
-
-	//Initialize the memory class, which gets the base address of the client and engine.dll in csgo to read form
-	//so you can get information like enemy position, etc.
-	if (!memory.initialize("csgo"))
-		return 0;
-
-	//Initialize the memory config for getting offsets from internet or file
-	if (!memory_config.initialize(argv[0], fetch_from_web))
-		return 0;
-
-	//Start the main thread that does all the hacks
+	//调用作弊线程
+	std::cout << "[+] 开始作弊线程...." << std::endl;
 	std::thread main_thread(hacks::main_thread);
-	main_thread.detach();
-
-	//If you press delete, close program
-	while(!GetAsyncKeyState(VK_DELETE)&1)
-	{
-		//If you press insert then load config
-		if (GetAsyncKeyState(VK_INSERT) & 1)
-			config.load_config();
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(5));
-	}
+	main_thread.join();
 
 	return 1;
 }

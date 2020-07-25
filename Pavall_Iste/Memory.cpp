@@ -31,7 +31,7 @@ Module Memory::get_engine() const
 Module Memory::get_module(std::string module) const
 {
 	HANDLE local_process_handle = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, process_id);
-	
+
 	if (local_process_handle == INVALID_HANDLE_VALUE)
 		return Module();
 
@@ -66,11 +66,11 @@ bool Memory::get_process_handle(std::string process)
 	PROCESSENTRY32 process_entry;
 	process_entry.dwSize = sizeof(PROCESSENTRY32);
 
-	if(Process32First(local_process_handle, &process_entry))
+	if (Process32First(local_process_handle, &process_entry))
 	{
-		while(Process32Next(local_process_handle, &process_entry))
+		while (Process32Next(local_process_handle, &process_entry))
 		{
-			if(std::string(process_entry.szExeFile).find(process) != std::string::npos)
+			if (std::string(process_entry.szExeFile).find(process) != std::string::npos)
 			{
 				process_id = process_entry.th32ProcessID;
 				process_handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, process_id);
@@ -85,13 +85,11 @@ bool Memory::get_process_handle(std::string process)
 
 bool Memory::initialize(std::string process)
 {
-	if (process.length() <= 0)
-		return false;
+	if (process.length() <= 0) return false;
 
-	if (!get_process_handle(process))
-		return false;
+	if (!get_process_handle(process)) return false;
 
-	client_dll = get_module("client_panorama.dll");
+	client_dll = get_module("client.dll");
 	engine_dll = get_module("engine.dll");
 
 	return(client_dll.module_base && engine_dll.module_base);
